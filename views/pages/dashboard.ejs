@@ -1,0 +1,60 @@
+<div class="container">
+	<h1 class="display-4 mb-4">Hi, <%= me.name %></h1>
+
+
+	<h4>These requests wait for your approval</h4>
+	
+	<% if (requests.length === 0) { %>
+		<div class="col">
+			<p class="text-secondary">There are no requests yet</p>
+		</div>
+	<% } %>
+
+	<hr />
+
+	<h4>My Users</h4>
+
+	<div class="row">
+
+		<% for (var i in users) { %>
+			<div class="col-md-3">
+				<div class="card mb-4">
+					<div class="card-body">
+						<h5 class="card-title">
+							<%= users[i].name %>
+
+							<% if (users[i].isAdmin) { %>
+								<span class="badge badge-info">
+									Admin
+								</span>
+							<% } %>
+						</h5>
+						<p>
+							<%= users[i].email %>
+						</p>
+						<a href="/users/<%= users[i].id %>" class="btn btn-primary">See profile</a>
+					</div>
+				</div>
+			</div>
+		<% } %>
+
+		<% if (users.length === 0) { %>
+			<div class="col">
+				<p class="text-secondary">It looks like you have no users yet, try adding one </p>
+			</div>
+		<% } %>
+	</div>
+
+	<hr />
+
+	<h4>My Websites</h4>
+
+	<% if (websites.length === 0) { %>
+		<div class="col">
+			<p class="text-secondary">You have no websites to take care of</p>
+		</div>
+	<% } %>
+	
+	<a href="/users/new" class="btn btn-warning">Add new user</a>
+
+</div>

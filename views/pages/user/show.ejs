@@ -1,0 +1,43 @@
+<div class="container">
+	<h1 class="display-4">
+		<%= user.name %>
+		
+	</h1>
+	<h4 class="mb-4">
+		<%= user.email %>
+		<% if(user.isAdmin) { %> 
+			<span class="badge badge-primary">
+				Admin
+			</span>
+		<% } %>
+	</h4>
+	<hr />
+
+	<h4>Websites</h4>
+
+	<div class="row">
+		<% for (var i in user.websites) { %>
+			<div class="col-md-3">
+				<div class="card mb-4">
+					<div class="card-body">
+						<h5 class="card-title">
+							<%= user.websites[i].domain %>
+						</h5>
+						<p><%= user.websites[i].state %></p>
+					</div>
+				</div>
+			</div>
+		<% } %>
+
+		<% if (user.websites.length === 0) { %>
+			<div class="col">
+				<p class="text-secondary">There are no websites yet</p>
+			</div>
+		<% } %>
+	</div>
+
+	<% if (!user.isAdmin) { %>
+		<a href="/websites/new" class="btn btn-warning">Request a new website</a>
+	<% } %>
+
+</div>

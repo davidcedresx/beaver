@@ -1,7 +1,11 @@
+<% if(typeof me === 'undefined') {
+  var me = undefined;
+}%>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title>Beaver</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,10 +36,28 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/dependencies/bootstrap-4.css">
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+      <a class="navbar-brand" href="/">Beaver</a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+        </ul>
+
+          <% if (me) { %>
+            <a href="/logout" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</a>
+          <% } %>
+          
+      </div>
+    </nav>
+
     <%- body %>
 
 
@@ -105,6 +127,7 @@
     -->
 
     <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
