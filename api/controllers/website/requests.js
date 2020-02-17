@@ -11,7 +11,7 @@ module.exports = {
         // todo, this should be only work if this.me is admin
 
 		var users = await User.find({ creator: this.req.me.id });
-		var requests = await Website.find({ owner: users.map(function (user) { return user.id }), requests: false });
+		var requests = await Website.find({ owner: users.map(function (user) { return user.id }), request: true });
 		// var requests = websites.filter(function(website) {
 		// 	return website.request !== null
 		// });
