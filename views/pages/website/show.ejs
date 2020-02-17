@@ -1,0 +1,74 @@
+<div class="container">
+	<h1 class="display-4 mb-4">Website Room</h1>
+
+    <div class="row">
+        <div class="col">
+            <h4>Status: 
+                <% if (website.state === 'online') { %>
+                    <span class="badge badge-primary">
+                        Online
+                    </span>
+                <% } else { %>
+                    <span class="badge badge-warning">
+                        Offline
+                    </span>
+                <% }%>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h4>Domain name: <%= website.domain %></h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h4>Data:</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <% for (var [field, value] of Object.entries(website.data[0])) { %>
+
+            <% if (!field.includes('_') && field !== 'inputs') continue; %>
+
+            <div class="col-md-12">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= field %>
+                        </h5>
+                        <% if (field !== 'home_cards') { %>
+                            <p class="text-info"><%= value %></p>
+                        <% } else { %>
+                            <div class="row">
+                                <% for (var card of value) { %>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 bg-light">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%= Object.values(card)[0] %>
+                                                </h5>
+                                                <p><%= Object.values(card)[1] %></p>
+                                                <p class="text-info"><%= Object.values(card)[2] %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+        <% if (Object.entries(website.data[0]).length === 0) { %>
+            <div class="col">
+                <p class="text-secondary">This website has no data</p>
+            </div>
+        <% } %>
+    </div>
+
+</div>

@@ -1,5 +1,5 @@
 <div class="container">
-	<h1 class="display-4 mb-4">Create a new website</h1>
+	<h1 class="display-4 mb-4">Edit a website</h1>
 
 	<form action="/websites/create" method="POST" id="create-website-form">
 
@@ -8,17 +8,12 @@
             <input class="form-control" type="text" name="domain" id="domain" placeholder="Domain name" required/>
         </div>
 
-        <div class="form-group">
-            <label for="name">User email address</label>
-            <input class="form-control" type="text" name="email" id="email" placeholder="Email" required/>
-        </div>
-
 		<div class="form-group">
 		    <label for="format">Upload format</label>
 		    <input type="file" class="form-control-file" id="format" required>
 		</div>
 
-        <button class="btn btn-warning" type="submit">Create</button>
+        <button class="btn btn-warning" type="submit">Update</button>
 
 	</form>
 

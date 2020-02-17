@@ -20,6 +20,12 @@ module.exports.routes = {
 
   '/users/:id': { action: 'user/show' },
 
-  '/websites/new': { action: 'website/new' }
+  '/websites/new': { action: 'website/new' },
+
+  'post /websites/create': { action: 'website/create' },
+
+  '/websites/:id': { action: 'website/show' },
+
+  '/websites/edit': { action: 'website/edit'}
 
 };

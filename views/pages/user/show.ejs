@@ -24,6 +24,7 @@
 							<%= user.websites[i].domain %>
 						</h5>
 						<p><%= user.websites[i].state %></p>
+						<a href="/websites/<%= user.websites[i].id %>" class="btn btn-primary">Details</a>
 					</div>
 				</div>
 			</div>
@@ -35,9 +36,5 @@
 			</div>
 		<% } %>
 	</div>
-
-	<% if (!user.isAdmin) { %>
-		<a href="/websites/new" class="btn btn-warning">Request a new website</a>
-	<% } %>
 
 </div>

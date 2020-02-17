@@ -16,19 +16,21 @@ module.exports.bootstrap = async function() {
   // For example:
   //
   // Set up fake development data (or if we already have some, avast)
-  if (await User.count() > 0) {
-    return;
+  if (await User.count() == 0) {  
+    await User.createEach([
+      {
+        email: 'david@beaver.io',
+        name: 'David',
+        isAdmin: true,
+        password: await sails.helpers.passwords.hashPassword('hi')
+      },
+      {
+        email: 'quick@food.io',
+        name: 'Quick Food',
+        isAdmin: false,
+        password: await sails.helpers.passwords.hashPassword('hi'),
+        creator: 1
+      }
+    ]);
   }
-  
-  await User.createEach([
-    {
-      email: 'mike@beaver.io',
-      name: 'Mike',
-      isAdmin: true,
-      password: await sails.helpers.passwords.hashPassword('1234')
-    }
-  ]);
-
 };
-
-
