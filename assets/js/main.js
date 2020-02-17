@@ -1,4 +1,18 @@
 window.onload = function() {
+	var href = window.location.href;
+	console.log(window.location);
+
+	if (href.startsWith('http://localhost:1337/dns/')) {
+		var links = this.document.getElementsByClassName('nav-link');
+
+		for (var link of links) {
+			var chunks = link.href.split('/');
+			var path = chunks[chunks.length-1];
+			link.setAttribute('href', 'http://localhost:1337/dns/quickfood.io/' + path);
+		}
+	}
+	
+
 	document.getElementById('create-website-form').onsubmit = async function(e) {
 		e.preventDefault();
 		

@@ -26,6 +26,16 @@ module.exports.routes = {
 
   '/websites/:id': { action: 'website/show' },
 
-  '/websites/edit': { action: 'website/edit'}
+  '/websites/edit': { action: 'website/edit'},
+  
+  'post /websites/changeStatus': { action: 'website/change-status' },
+  
+  'post /websites/get': { action: 'website/get' },
+
+  '/requests': { action: 'website/requests' },
+
+  '/requests/create': { action: 'requests/create' },
+  
+  '/dns/:domain/:path?': { action: 'dns/get-website' }
 
 };

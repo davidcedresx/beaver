@@ -1,6 +1,10 @@
 <% if(typeof me === 'undefined') {
-  var me = undefined;
-}%>
+    var me = undefined;
+  }
+  if (typeof skip_layout === 'undefined') {
+    var skip_layout = false;
+  }
+  %>
 
 <!DOCTYPE html>
 <html>
@@ -43,6 +47,8 @@
 
   <body>
 
+   <% if(!skip_layout) { %>
+
    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
       <a class="navbar-brand" href="/">Beaver</a>
       
@@ -57,6 +63,8 @@
           
       </div>
     </nav>
+
+    <% } %>
 
     <%- body %>
 
@@ -128,7 +136,7 @@
 
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
-    <script src="/js/website.new.js"></script>
+    <script src="/js/main.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

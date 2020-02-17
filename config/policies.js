@@ -19,5 +19,6 @@ module.exports.policies = {
 
   '*': 'is-logged-in',
   'auth/*': true,
-  'view-landing': true
+  'view-landing': true,
+  'dns/*': true
 };

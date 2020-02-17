@@ -1,0 +1,54 @@
+
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><%= website.data[0].company_name %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/services">Services</a>
+            </li>
+          </ul>
+        </nav>
+    
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+            <h4 class="display-3"><%= website.data[0].header_title %></h1>
+            <p class="lead"><%= website.data[0].header_description %></p>
+            </div>
+        </div> 
+
+    <div class="container p-4">
+
+        <h1 class="display-4">Contact Us</h1>
+
+        <form action="#" method="POST">
+            <% for (var input of website.data[0].inputs ) { %>
+                <div class="form-group">
+                    <label><%= input %></label>
+                    <input type="text" class="form-control" placeholder="<%= input %>" >
+                </div>
+            <% } %>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+    <div class="row text-center footer bg-dark text-light" style="margin-top: 100px;">
+        <div class="col">
+            <p style="margin-top: 16px;"><%= website.data[0].footer_text %></p>
+        </div>
+    </div>
+
+</div>

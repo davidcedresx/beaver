@@ -1,18 +1,7 @@
 <div class="container">
 	<h1 class="display-4 mb-4">Hi, <%= me.name %></h1>
-
-
-	<h4>These requests wait for your approval</h4>
 	
-	<% if (requests.length === 0) { %>
-		<div class="col">
-			<p class="text-secondary">There are no requests yet</p>
-		</div>
-	<% } %>
-
-	<hr />
-
-	<h4>My users</h4>
+	<h4>My Persons</h4>
 
 	<div class="row">
 
@@ -58,7 +47,7 @@
 							<%= websites[i].domain %>
 						</h5>
 						<p><%= websites[i].state %></p>
-						<a href="/websites/<%=websites[i].id%>" class="btn btn-primary">Details</a>
+						<!-- <a href="/websites/<%=websites[i].id%>" class="btn btn-primary">Details</a> -->
 					</div>
 				</div>
 			</div>
@@ -76,11 +65,11 @@
 
 	<h4>Get website</h4>
 
-	<form action="#" method="GET">
+	<form action="/websites/get" method="POST">
 		<div class="form-row">
 			<div class="col">
 				<div class="form-group">
-					<input class="form-control" type="text" name="page-url" placeholder="Website URL" />
+					<input class="form-control" type="text" name="domain" placeholder="Website URL" />
 				</div>
 			</div>
 			<div class="col-auto">
@@ -91,9 +80,28 @@
 		</div>
 		
 	</form>
+
+
+	<h4>Change state</h4>
+
+	<form action="/websites/changeStatus" method="POST">
+		<div class="form-row">
+			<div class="col">
+				<div class="form-group">
+					<input class="form-control" type="text" name="domain" placeholder="Website URL" />
+				</div>
+			</div>
+			<div class="col-auto">
+				<div class="form-group">
+					<button class="btn btn-dark" type="submit">Change state</button>
+				</div>
+			</div>
+		</div>
+		
+	</form>
 	
-	<a href="/users/new" class="btn btn-primary">Add new user</a>
-	<a href="/websites/new" class="btn btn-info">Create website</a>
-	<a href="/websites/edit" class="btn btn-warning">Update website</a>
+	<a href="/users/new" class="btn mb-4 btn-primary">Create account</a>
+	<a href="/websites/new" class="btn mb-4 btn-info">Create website</a>
+	<a href="/requests" class="btn mb-4 btn-warning">Update website</a>
 
 </div>
