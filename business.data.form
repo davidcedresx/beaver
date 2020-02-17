@@ -1,0 +1,44 @@
+# general
+
+company-name: "Quick Food"
+logo-image-url: "https://placeholder.com/150"
+header-title: "Get your food in a snap"
+header-description: "Because we are cool and deliver in bikes"
+footer-text: "Quick Food 2020 c.a"
+
+# home view
+
+relevant-information-column-1-title: "Hamburgers"
+relevant-information-column-1-text: "Love them!"
+relevant-information-column-2-title: "Pizza"
+relevant-information-column-2-text: "OMG!"
+
+home-card-title: "Secure delivery"
+home-card-image-url: "https://placeholder.com/150"
+home-card-text: "Our guys are the best in town"
+
+home-card-title: "100% refund for cold pizza"
+home-card-image-url: "https://placeholder.com/150"
+home-card-text: "You heard it right"
+
+home-card-title: "Realtime tracking of the delivery"
+home-card-image-url: "https://placeholder.com/150"
+home-card-text: "Use our custom GPS based application"
+
+# contact view
+
+contact-form-input: "name"
+contact-form-input: "email"
+contact-form-input: "phone number"
+
+# about view
+
+relevant-description-column-1-title: "We are just opening"
+relevant-description-column-1-text: "We are a small startup from Colorado"
+relevant-description-column-2-title: "Please help us become bigger"
+relevant-description-column-2-text: "This can take over the world, don't you think?"
+
+# services view
+
+services-title: "Come back to us"
+services-text: "And we'll give you free nachos"
