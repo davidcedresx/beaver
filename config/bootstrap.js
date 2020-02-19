@@ -19,17 +19,10 @@ module.exports.bootstrap = async function() {
   if (await User.count() == 0) {  
     await User.createEach([
       {
-        email: 'david@beaver.io',
-        name: 'David',
+        email: 'admin@beaver.io',
+        name: 'Admin',
         isAdmin: true,
-        password: await sails.helpers.passwords.hashPassword('hi')
-      },
-      {
-        email: 'quick@food.io',
-        name: 'Quick Food',
-        isAdmin: false,
-        password: await sails.helpers.passwords.hashPassword('hi'),
-        creator: 1
+        password: await sails.helpers.passwords.hashPassword('123456')
       }
     ]);
   }

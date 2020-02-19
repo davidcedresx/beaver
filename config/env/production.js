@@ -251,7 +251,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-       'https://beaver-ula.herokuapp.com/'
+       'https://beaver-ula.herokuapp.com'
     ],
 
 
